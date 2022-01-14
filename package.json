@@ -1,6 +1,6 @@
 {
   "name": "vve-starter",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "dev": "vite --open --host --port 4400",
