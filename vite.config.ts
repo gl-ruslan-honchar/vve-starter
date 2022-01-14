@@ -1,31 +1,30 @@
-import path from "path";
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import Pages from "vite-plugin-pages";
-import Layouts from "vite-plugin-vue-layouts";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import Icons from "unplugin-icons/vite";
-import IconsResolver from "unplugin-icons/resolver";
-import VueI18n from "@intlify/vite-plugin-vue-i18n";
-import { VitePWA } from "vite-plugin-pwa";
-import WindiCSS from "vite-plugin-windicss";
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Layouts from 'vite-plugin-vue-layouts'
+import Pages from 'vite-plugin-pages'
+import { VitePWA } from 'vite-plugin-pwa'
+import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import WindiCSS from 'vite-plugin-windicss'
+import { defineConfig } from 'vite'
+import path from 'path'
+import pkg from './package.json'
+import vue from '@vitejs/plugin-vue'
 
-import pkg from "./package.json";
+process.env.VITE_APP_VERSION = pkg.version
 
-process.env.VITE_APP_VERSION = pkg.version;
-
-if (process.env.NODE_ENV === "production") {
-  process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString();
+if (process.env.NODE_ENV === 'production') {
+  process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
 }
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      "@": path.resolve(__dirname),
-      "~": path.resolve(__dirname, "./src"),
-      "~~": path.resolve(__dirname, "./src/modules"),
+      '@': path.resolve(__dirname),
+      '~': path.resolve(__dirname, './src'),
+      '~~': path.resolve(__dirname, './src/modules'),
     },
   },
 
@@ -36,20 +35,20 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    include: ["vue", "vue-router", "@vueuse/core"],
+    include: ['vue', 'vue-router', '@vueuse/core'],
     // exclude: ["vue-demi"],
   },
 
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
-    script: "async",
-    formatting: "minify",
+    script: 'async',
+    formatting: 'minify',
   },
 
   // https://vitest.dev/
   test: {
     global: true,
-    environment: "happy-dom",
+    environment: 'happy-dom',
   },
 
   plugins: [
@@ -57,36 +56,30 @@ export default defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      extensions: ["vue"],
+      extensions: ['vue'],
       pagesDir: [
-        { dir: "src/core/**/pages", baseRoute: "" },
-        { dir: "src/modules/**/pages", baseRoute: "" },
+        { dir: 'src/core/**/pages', baseRoute: '' },
+        { dir: 'src/modules/**/pages', baseRoute: '' },
       ],
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
     Layouts({
-      defaultLayout: "DefaultLayout",
-      layoutsDir: "src/core/layouts",
+      defaultLayout: 'DefaultLayout',
+      layoutsDir: 'src/core/layouts',
     }),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
-      include: [path.resolve(__dirname, "locales/**")],
+      include: [path.resolve(__dirname, 'locales/**')],
     }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
-      imports: [
-        "vue",
-        "vue-router",
-        "vue-i18n",
-        "@vueuse/head",
-        "@vueuse/core",
-      ],
-      dts: "src/types/auto-imports.d.ts",
+      imports: ['vue', 'vue-router', 'vue-i18n', '@vueuse/head', '@vueuse/core'],
+      dts: 'src/types/auto-imports.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-icons
@@ -98,50 +91,50 @@ export default defineConfig({
     // https://github.com/antfu/unplugin-vue-components
     Components({
       // relative paths to the directory to search for components
-      dirs: ["src/**/components"],
-      extensions: ["vue"],
+      dirs: ['src/**/components'],
+      extensions: ['vue'],
       // search for subdirectories
       deep: true,
-      dts: "src/types/components.d.ts",
+      dts: 'src/types/components.d.ts',
       include: [/\.vue$/, /\.vue\?vue/],
       // custom resolvers
       resolvers: [
         // auto import icons
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
-          componentPrefix: "",
-          enabledCollections: ["carbon"],
+          componentPrefix: '',
+          enabledCollections: ['carbon'],
         }),
       ],
     }),
 
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
-      registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "robots.txt", "safari-pinned-tab.svg"],
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'robots.txt', 'safari-pinned-tab.svg'],
       manifest: {
-        name: "APPLICATION NAME",
-        short_name: "APP SHORT",
-        theme_color: "#ffffff",
+        name: 'APPLICATION NAME',
+        short_name: 'APP SHORT',
+        theme_color: '#ffffff',
         icons: [
           {
-            src: "/pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
           },
           {
-            src: "/pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
           },
           {
-            src: "/pwa-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },
     }),
   ],
-});
+})

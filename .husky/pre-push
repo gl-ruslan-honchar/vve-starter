@@ -1,4 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
-# pnpm test
+pnpm test
+# pnpm test:ci:components
+# pnpm test:ci:e2e

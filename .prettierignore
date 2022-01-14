@@ -1,0 +1,16 @@
+.github/
+.husky/
+.vscode/
+
+**/*.md
+**/coverage/
+
+dist/
+locales/
+
+node_modules/
+
+src/types/components.d.ts
+src/types/auto-imports.d.ts
+
+storybook-static

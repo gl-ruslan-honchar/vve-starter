@@ -30,7 +30,7 @@
       }
     ],
     "allowJs": false,
-    "sourceMap": false,
+    "sourceMap": false
   },
   "exclude": ["dist", "node_modules", "public"]
 }

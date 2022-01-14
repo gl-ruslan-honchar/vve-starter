@@ -1,36 +1,36 @@
-import { describe, expect, test, beforeEach } from "vitest";
-import { mount } from "@vue/test-utils";
-import Counter from "./counter.vue";
+import { beforeEach, describe, expect, test } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 
-import { setActivePinia, createPinia } from "pinia";
-import { createApp } from "vue";
+import Counter from './counter.vue'
+import { createApp } from 'vue'
+import { mount } from '@vue/test-utils'
 
 // you don't need to create one app per test
-const app = createApp({});
+const app = createApp({})
 
-describe("Counter component", async () => {
+describe('Counter component', async () => {
   beforeEach(() => {
     const pinia = createPinia()
-    app.use(pinia);
-    setActivePinia(pinia);
-  });
+    app.use(pinia)
+    setActivePinia(pinia)
+  })
 
-  test("should mount the component", async () => {
-    expect(Counter).toBeTruthy();
+  test('should mount the component', async () => {
+    expect(Counter).toBeTruthy()
 
-    const wrapper = mount(Counter);
+    const wrapper = mount(Counter)
 
-    expect(wrapper.get('h1').text()).toContain("Simple Counter Test");
-    expect(wrapper.html()).toMatchSnapshot();
-  });
+    expect(wrapper.get('h1').text()).toContain('Simple Counter Test')
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 
-  test("should update counter text on button click", async () => {
-    const wrapper = mount(Counter);
+  test('should update counter text on button click', async () => {
+    const wrapper = mount(Counter)
 
-    expect(wrapper.get("span.count").text()).toContain(0);
-    
-    await wrapper.get("button").trigger("click");
+    expect(wrapper.get('span.count').text()).toContain(0)
 
-    expect(wrapper.get("span.count").text()).toContain(1);
-  });
-});
+    await wrapper.get('button').trigger('click')
+
+    expect(wrapper.get('span.count').text()).toContain(1)
+  })
+})
