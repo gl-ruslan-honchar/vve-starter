@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`Counter component > should mount the component 1`] = `
+"<div>
+  <h1>Simple Counter Test</h1>
+  <div>
+    <!-- class=\\"px-6 py-2 bg-gray-500 font-medium text-sm hover:bg-gray-600 text-gray-100 rounded\\" --><button class=\\"btn\\"> Click to update the count: </button>
+    <div class=\\"py-4\\"><span class=\\"count\\">0</span></div>
+  </div>
+</div>"
+`;
