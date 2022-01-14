@@ -13,6 +13,7 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
+    "allowJs": false,
     "types": [
       "cypress",
       "vite/client",
@@ -28,9 +29,15 @@
       {
         "name": "@vuedx/typescript-plugin-vue"
       }
-    ],
-    "allowJs": false,
-    "sourceMap": false
+    ]
   },
-  "exclude": ["dist", "node_modules", "public"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "public",
+    ".storybook/**/*.js",
+    ".storybook/**/*.ts",
+    "**/*.stories.ts",
+    "**/*.stories.js"
+  ]
 }

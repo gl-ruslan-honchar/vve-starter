@@ -55,6 +55,7 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.words": [
+      "commitlint",
       "demi",
       "intlify",
       "loglevel",
@@ -67,6 +68,7 @@
       "vite",
       "vitejs",
       "vitest",
+      "vuedx",
       "vueuse",
       "windicss"
     ],
