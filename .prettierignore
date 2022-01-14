@@ -7,6 +7,8 @@
 
 dist/
 locales/
+.vite-ssg-temp/
+.npmrc
 
 node_modules/
 

@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     HelloWorld: typeof import('./../core/components/HelloWorld.vue')['default']
   }
 }

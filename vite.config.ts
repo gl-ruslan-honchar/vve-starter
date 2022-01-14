@@ -36,7 +36,7 @@ export default defineConfig({
 
   optimizeDeps: {
     include: ['vue', 'vue-router', '@vueuse/core'],
-    // exclude: ["vue-demi"],
+    exclude: ['vue-demi'],
   },
 
   // https://github.com/antfu/vite-ssg
@@ -103,7 +103,7 @@ export default defineConfig({
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
           componentPrefix: '',
-          enabledCollections: ['carbon'],
+          // enabledCollections: ['carbon'],
         }),
       ],
     }),

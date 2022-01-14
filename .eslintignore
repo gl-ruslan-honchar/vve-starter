@@ -3,6 +3,7 @@
 .vscode/
 **/coverage/
 dist/
+.vite-ssg-temp/
 locales/
 node_modules/
 src/components.d.ts
