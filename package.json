@@ -29,7 +29,7 @@
     "analyze:windicss": "npx windicss-analysis",
     "release": "standard-version",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "husky install && chmod ug+x .husky/*"
+    "prepare": "husky install && chmod ug+x .husky/*"
   },
   "dependencies": {
     "@vueuse/core": "^7.5.3",
