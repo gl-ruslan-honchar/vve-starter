@@ -4,25 +4,9 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CollapseAnimation: typeof import('./../core/components/animations/CollapseAnimation/CollapseAnimation.vue')['default']
-    FadeAnimation: typeof import('./../core/components/animations/FadeAnimation/FadeAnimation.vue')['default']
+    BaseButton: typeof import('./../core/components/base/BaseButton/BaseButton.vue')['default']
+    BaseInput: typeof import('./../core/components/base/BaseInput/BaseInput.vue')['default']
     HelloWorld: typeof import('./../core/components/HelloWorld.vue')['default']
-    VueAccordion: typeof import('./../core/components/base/VueAccordion/VueAccordion.vue')['default']
-    VueAccordionItem: typeof import('./../core/components/base/VueAccordion/VueAccordionItem.vue')['default']
-    VueAvatar: typeof import('./../core/components/base/VueAvatar/VueAvatar.vue')['default']
-    VueBadge: typeof import('./../core/components/base/VueBadge/VueBadge.vue')['default']
-    VueCard: typeof import('./../core/components/base/VueCard/VueCard.vue')['default']
-    VueCarousel: typeof import('./../core/components/base/VueCarousel/VueCarousel.vue')['default']
-    VueCollapse: typeof import('./../core/components/base/VueCollapse/VueCollapse.vue')['default']
-    VueImage: typeof import('./../core/components/base/VueImage/VueImage.vue')['default']
-    VueLoader: typeof import('./../core/components/base/VueLoader/VueLoader.vue')['default']
-    VueMarkdown: typeof import('./../core/components/base/VueMarkdown/VueMarkdown.vue')['default']
-    VueMenu: typeof import('./../core/components/base/VueMenu/VueMenu.vue')['default']
-    VueModal: typeof import('./../core/components/base/VueModal/VueModal.vue')['default']
-    VueTabGroup: typeof import('./../core/components/base/VueTabGroup/VueTabGroup.vue')['default']
-    VueTabItem: typeof import('./../core/components/base/VueTabGroup/VueTabItem.vue')['default']
-    VueToast: typeof import('./../core/components/base/VueToast/VueToast.vue')['default']
-    VueTooltip: typeof import('./../core/components/base/VueTooltip/VueTooltip.vue')['default']
   }
 }
 

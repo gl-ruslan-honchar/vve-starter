@@ -100,6 +100,18 @@ Just run and visit <http://localhost:3333>
 pnpm dev
 ```
 
+### Working with Git
+
+This project is using [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+If you're not familiar with it you can use [commitizen](https://www.npmjs.com/package/commitizen) for the begging
+
+You can simply run following command to commit your changes.
+
+```bash
+npx cz
+```
+
 ### Build
 
 To build the App, run
